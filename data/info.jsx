@@ -289,7 +289,7 @@ export const ImportantPlacesData = [
 export const SommanitoBektiborgo = [
 
   {
-    id: 1,
+    id: 5,
     name: "রুহুল আমিন ভুইয়া ভুট্টো",
     designation: "বিশিষ্ট ব্যবসায়ী ও সমাজসেবক",
     image: "/images/botto.jpeg",
@@ -303,7 +303,7 @@ export const SommanitoBektiborgo = [
   },
 
   {
-    id: 2,
+    id: 4,
     name: "ইঞ্জিনিয়ার কামরুজ্জামান ভুঁইয়া জামাল",
     designation: "সাবেক প্রকল্প পরিচালক",
     image: "/images/engineer.jpeg",
@@ -331,7 +331,7 @@ export const SommanitoBektiborgo = [
 },
 
   {
-    id: 4,
+    id: 6,
     name: "ইমরান হাসান খোকা",
     designation: "বিশিষ্ট ব্যবসায়ী ও সমাজসেবক",
     image: "/images/koka.jpeg",
@@ -345,7 +345,7 @@ export const SommanitoBektiborgo = [
   },
  
   {
-    id: 5,
+    id: 2,
     name: "মাওলানা ইসলাম উদ্দীন",
     designation: "সাংবাদিক, শিক্ষক ও সমাজসেবক",
     image: "/images/mawlana.jpeg",
@@ -360,7 +360,7 @@ export const SommanitoBektiborgo = [
   },
   
   {
-    id: 6,
+    id: 1,
     name: "আব্দুর রশিদ মাস্টার",
     designation: "সাবেক ইউপি সদস্য ও শিক্ষক",
     image: "/images/resid.jpeg",
