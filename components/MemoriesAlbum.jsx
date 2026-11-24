@@ -37,11 +37,13 @@ export default function MemoriesAlbum() {
           (album) => album.category === activeCategory
         );
 
+  // Close Viewer
   const closeViewer = useCallback(() => {
     setSelectedAlbum(null);
     setActiveImage(0);
   }, []);
 
+  // Next Image
   const nextImage = useCallback(() => {
     if (!selectedAlbum) return;
 
@@ -50,6 +52,7 @@ export default function MemoriesAlbum() {
     );
   }, [selectedAlbum]);
 
+  // Previous Image
   const prevImage = useCallback(() => {
     if (!selectedAlbum) return;
 
@@ -60,7 +63,7 @@ export default function MemoriesAlbum() {
     );
   }, [selectedAlbum]);
 
-  // Keyboard Navigation and Body Scroll Lock
+  // Keyboard Navigation + Body Scroll Lock
   useEffect(() => {
     if (!selectedAlbum) return;
 
@@ -84,7 +87,7 @@ export default function MemoriesAlbum() {
   return (
     <section
       id="memories"
-      className="relative isolate overflow-hidden bg-[#172D1D] px-4 py-16 text-white/95 sm:px-6 sm:py-20 md:px-8 md:py-28"
+      className="relative overflow-hidden bg-[#172D1D] px-4 py-16 text-white/95 sm:px-6 sm:py-20 md:px-8 md:py-28"
     >
       {/* Background Decorations */}
       <div className="pointer-events-none absolute -left-40 top-20 h-72 w-72 rounded-full bg-[#E6D3A1]/10 blur-[100px] sm:h-96 sm:w-96" />
@@ -97,7 +100,6 @@ export default function MemoriesAlbum() {
 
         {/* Section Heading */}
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
-
           <span className="inline-flex items-center gap-2 rounded-full border border-[#E6D3A1]/25 bg-white/[0.07] px-4 py-2 text-[11px] font-semibold tracking-wide text-white/95 shadow-lg backdrop-blur-xl sm:px-5 sm:text-sm">
             <span className="relative flex h-2 w-2">
               <span className="absolute h-full w-full animate-ping rounded-full bg-[#E6D3A1] opacity-60" />
@@ -168,10 +170,9 @@ export default function MemoriesAlbum() {
                     className="object-cover transition-transform duration-700 ease-out sm:group-hover:scale-110"
                   />
 
-                  {/* Image Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#101E14] via-[#101E14]/10 to-black/20" />
 
-                  {/* Top Badges */}
+                  {/* Category Badge */}
                   <div className="absolute left-3 top-3 sm:left-4 sm:top-4">
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-[#172D1D]/75 px-3 py-1.5 text-[10px] font-semibold text-white/95 shadow-lg backdrop-blur-xl sm:gap-2 sm:px-3.5 sm:py-2 sm:text-xs">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#E6D3A1]" />
@@ -195,7 +196,7 @@ export default function MemoriesAlbum() {
                     {album.memoryPhoto.length} টি
                   </div>
 
-                  {/* Image Bottom Title */}
+                  {/* Title */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
                     <span className="text-[10px] font-medium tracking-[0.15em] text-[#E6D3A1] sm:text-xs">
                       MEMORY COLLECTION
@@ -206,7 +207,7 @@ export default function MemoriesAlbum() {
                     </h3>
                   </div>
 
-                  {/* Hover View Icon */}
+                  {/* View Icon */}
                   <div className="absolute inset-0 hidden items-center justify-center opacity-0 transition-all duration-500 sm:flex sm:group-hover:opacity-100">
                     <div className="flex h-14 w-14 translate-y-3 items-center justify-center rounded-full border border-white/40 bg-white/15 text-white backdrop-blur-xl transition-transform duration-500 group-hover:translate-y-0">
                       <svg
@@ -308,21 +309,35 @@ export default function MemoriesAlbum() {
       {/* Full Screen Photo Viewer */}
       {selectedAlbum && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-[#07110a]/[0.97] p-3 backdrop-blur-xl sm:p-5"
+          className="fixed inset-0 z-[99990] flex items-center justify-center overflow-y-auto bg-[#07110a]/[0.97] p-3 backdrop-blur-xl sm:p-5"
           onClick={closeViewer}
         >
-          {/* Close Button */}
+          {/* Close Cross Button - Top Left */}
           <button
             type="button"
-            onClick={closeViewer}
-            aria-label="অ্যালবাম বন্ধ করুন"
-            className="fixed right-3 top-3 z-[110] flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-2xl text-white/95 backdrop-blur-xl transition hover:border-[#E6D3A1] hover:bg-[#E6D3A1] hover:text-[#172D1D] sm:right-6 sm:top-6 sm:h-12 sm:w-12"
+            onClick={(e) => {
+              e.stopPropagation();
+              closeViewer();
+            }}
+            aria-label="Close photo viewer"
+            className="fixed left-4 top-4 z-[99999] flex h-12 w-12 items-center justify-center rounded-full border-2 border-gray-300/60 bg-gray-300 text-white shadow-[0_4px_25px_rgba(220,38,38,0.65)] transition-all duration-300 hover:scale-110 hover:bg-gray-700 active:scale-95 sm:left-6 sm:top-6 sm:h-14 sm:w-14"
           >
-            &times;
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-6 w-6 sm:h-7 sm:w-7"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
           </button>
 
+          {/* Viewer Content */}
           <div
-            className="my-auto w-full max-w-5xl pt-12 sm:pt-8"
+            className="my-auto w-full max-w-5xl pt-14 sm:pt-16"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Album Heading */}
@@ -352,7 +367,7 @@ export default function MemoriesAlbum() {
                 className="object-contain"
               />
 
-              {/* Previous */}
+              {/* Previous and Next Buttons */}
               {selectedAlbum.memoryPhoto.length > 1 && (
                 <>
                   <button
@@ -364,7 +379,6 @@ export default function MemoriesAlbum() {
                     <ArrowIcon direction="left" />
                   </button>
 
-                  {/* Next */}
                   <button
                     type="button"
                     onClick={nextImage}
