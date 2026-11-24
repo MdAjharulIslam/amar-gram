@@ -122,7 +122,7 @@ export default function Footer() {
           <div className="h-px bg-gradient-to-r from-transparent via-[#E6D3A1]/30 to-transparent" />
           <div className="pt-5 text-center">
             <p className="text-[10px] font-medium text-white/50 sm:text-xs">
-              © {new Date().getFullYear()} Amar Gram. All rights reserved.
+             © 2026 Amar Gram. All rights reserved.
             </p>
             <p className="mt-2 text-[10px] text-white/40 sm:text-xs">
               Made with <span className="text-red-400">♥</span> for our village
