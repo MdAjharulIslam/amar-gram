@@ -43,7 +43,7 @@ export default function ImportantPlaces() {
     setActiveIndex(closestIndex);
   }, []);
 
-  // Scroll only card slider
+  // Scroll to card
   const scrollToCard = (index) => {
     const container = sliderRef.current;
 
@@ -127,12 +127,12 @@ export default function ImportantPlaces() {
         <div
           ref={sliderRef}
           onScroll={handleScroll}
-          className="flex w-full snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-1 pb-5 scrollbar-hide sm:gap-5 lg:hidden"
+          className="flex w-full snap-x snap-proximity gap-4 overflow-x-auto overscroll-x-auto px-1 pb-5 scrollbar-hide sm:gap-5 lg:hidden"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",
             WebkitOverflowScrolling: "touch",
-            touchAction: "pan-x",
+            touchAction: "pan-x pan-y",
           }}
         >
           {places.map((place, index) => (
@@ -140,10 +140,10 @@ export default function ImportantPlaces() {
               key={place.id}
               data-place-card
               href={`/places/${place.id}`}
-              className="group w-[85%] min-w-[85%] shrink-0 snap-start overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-xl shadow-black/10 transition sm:w-[65%] sm:min-w-[65%] md:w-[48%] md:min-w-[48%]"
+              className="group w-[85%] min-w-[85%] shrink-0 snap-start touch-pan-x overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-xl shadow-black/10 transition sm:w-[65%] sm:min-w-[65%] md:w-[48%] md:min-w-[48%]"
             >
               {/* Image */}
-              <div className="relative h-60 overflow-hidden sm:h-72">
+              <div className="relative h-60 touch-pan-x overflow-hidden sm:h-72">
 
                 {place.image ? (
                   <Image
@@ -152,7 +152,7 @@ export default function ImportantPlaces() {
                     fill
                     sizes="85vw"
                     draggable={false}
-                    className="pointer-events-none object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="pointer-events-none select-none object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#36583A] to-[#172D1D]">
