@@ -343,11 +343,24 @@ export const SommanitoBektiborgo = [
   ],
 },
 
+ {
+  id: 5,
+  name: "জাফরিন আক্তার (পলি)",
+  designation: "সহকারী অধ্যাপক, রাষ্ট্রবিজ্ঞান বিভাগ, ইডেন মহিলা কলেজ, ঢাকা",
+  image: "/images/poli.jpg",
+  description:
+    "২৯তম বিসিএস (শিক্ষা) ক্যাডারের একজন কর্মকর্তা। বর্তমানে ইডেন মহিলা কলেজ, ঢাকায় রাষ্ট্রবিজ্ঞান বিভাগের সহকারী অধ্যাপক হিসেবে কর্মরত।",
+  contributions: [
+    "২৯তম বিসিএস (শিক্ষা) ক্যাডার",
+    "সহকারী অধ্যাপক, রাষ্ট্রবিজ্ঞান বিভাগ",
+    "ইডেন মহিলা কলেজ, ঢাকা",
+  ],
+},
 
 
 
   {
-    id: 5,
+    id: 6,
     name: "রুহুল আমিন ভুইয়া ভুট্টো",
     designation: "বিশিষ্ট ব্যবসায়ী ও সমাজসেবক",
     image: "/images/botto.jpeg",
@@ -364,7 +377,7 @@ export const SommanitoBektiborgo = [
 
 
   {
-    id: 6,
+    id: 7,
     name: "ইমরান হাসান খোকা",
     designation: "বিশিষ্ট ব্যবসায়ী ও সমাজসেবক",
     image: "/images/koka.jpeg",
@@ -472,7 +485,7 @@ export const BloodDonors = [
   },
   {
     id: 3,
-    name: "কামরুল ইসলাম",
+    name: "কামরুল হাসান",
     bloodGroup: "A+",
     phone: "+8801740957622",
     location: "খলাপাড়া",
