@@ -487,7 +487,7 @@ export const BloodDonors = [
     id: 3,
     name: "কামরুল হাসান",
     bloodGroup: "A+",
-    phone: "+8801740957622",
+    phone: "+8801631461873",
     location: "খলাপাড়া",
     image: "/images/kamrul.jpeg",
     availability: "যোগাযোগ করে নিশ্চিত করুন",
