@@ -658,6 +658,11 @@ export const MemoriesData = [
       "/images/event-1.jpg",
       "/images/event-2.jpg",
       "/images/event-3.jpg",
+       "/images/event-4.jpeg",
+        "/images/event-5.jpeg",
+         "/images/event-6.jpeg",
+          "/images/event-7.jpeg",
+           "/images/event-8.jpeg",
     ],
   },
   {
